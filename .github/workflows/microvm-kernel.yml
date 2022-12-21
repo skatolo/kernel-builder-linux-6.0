@@ -23,7 +23,8 @@ jobs:
             bison \
             flex \
             libelf-dev \
-            dwarves
+            dwarves \
+            bc
       - name: clone linux
         run: |
           time git clone https://github.com/torvalds/linux.git linux.git --depth=1 --branch v6.0
