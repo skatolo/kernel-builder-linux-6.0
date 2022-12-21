@@ -38,6 +38,6 @@ jobs:
       - name: Make vmlinux
         run: |
           cd linux.git
-          time make vmlinux modules -j$(nproc)
+          time make vmlinux -j$(nproc)
           du -h ./vmlinux
 
