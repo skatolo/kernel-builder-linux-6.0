@@ -1,6 +1,14 @@
 name: microvm-kernel
 
-on: push
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
 
 jobs:
   microvm-kernel:
