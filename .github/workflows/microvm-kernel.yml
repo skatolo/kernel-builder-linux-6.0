@@ -12,7 +12,7 @@ on:
 
 jobs:
   microvm-kernel:
-    runs-on: actuated
+    runs-on: ubuntu-latest
     steps:
       - name: free RAM
         run: free -h
