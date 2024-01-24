@@ -10,10 +10,9 @@ on:
       - main
   workflow_dispatch:
 
-
 jobs:
   microvm-kernel:
-    runs-on: ubuntu-latest
+    runs-on: [actuated-arm64-32cpu-64gb, aadp]
     steps:
       - name: free RAM
         run: free -h
