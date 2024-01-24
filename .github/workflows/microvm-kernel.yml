@@ -12,7 +12,7 @@ on:
 
 jobs:
   microvm-kernel:
-    runs-on: [actuated-arm64-32cpu-64gb, aadp]
+    runs-on: [actuated-arm64-32cpu-64gb]
     steps:
       - name: free RAM
         run: free -h
