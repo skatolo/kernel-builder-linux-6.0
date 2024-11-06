@@ -12,7 +12,7 @@ on:
 
 jobs:
   microvm-kernel:
-    runs-on: [actuated-arm64-32cpu-64gb]
+    runs-on: [actuated-4cpu-24gb, n100]
     steps:
 
 # vmmeter start
