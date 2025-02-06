@@ -16,6 +16,7 @@ jobs:
     runs-on: [actuated-2cpu-4gb, ec2]
     steps:
 
+
 # vmmeter start
       - uses: alexellis/setup-arkade@master
       - uses: self-actuated/vmmeter-action@master
