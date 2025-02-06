@@ -13,7 +13,7 @@ on:
 
 jobs:
   microvm-kernel:
-    runs-on: [actuated-4cpu-4gb, hetzner]
+    runs-on: [actuated-4cpu-4gb, ec2]
     steps:
 
 # vmmeter start
