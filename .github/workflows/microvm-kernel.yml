@@ -14,7 +14,7 @@ on:
 jobs:
   build:
     name: microvm-kernel-${{ matrix.label }}
-    runs-on: [actuated-2cpu-4gb, "${{ matrix.label }}" ]
+    runs-on: [actuated-4cpu-12gb, "${{ matrix.label }}" ]
     strategy:
       matrix:
         label: [a102,ec2]
