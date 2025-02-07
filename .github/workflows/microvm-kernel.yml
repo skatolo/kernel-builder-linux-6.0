@@ -12,6 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  build:
     name: microvm-kernel-${{ matrix.label }}
     runs-on: [actuated-2cpu-4gb, "${{ matrix.label }}" ]
     strategy:
