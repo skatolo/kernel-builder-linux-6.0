@@ -12,11 +12,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  microvm-kernel:
-    runs-on: [actuated-2cpu-4gb, ec2]
+    name: microvm-kernel-${{ matrix.label }}
+    runs-on: [actuated-2cpu-4gb, "${{ matrix.label }}" ]
+    strategy:
+      matrix:
+        label: [ec2]
+
     steps:
-
-
 # vmmeter start
       - uses: alexellis/setup-arkade@master
       - uses: self-actuated/vmmeter-action@master
