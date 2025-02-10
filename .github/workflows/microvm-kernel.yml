@@ -49,8 +49,11 @@ jobs:
       - name: make config
         run: |
           cd linux.git 
-          # Generate a minimal empty config
-          make defconfig
+          # Generate a default config
+          #make defconfig
+
+          # Generate a minimal config
+          make allnoconfig
 
           # Turn off a couple of things
           scripts/config --disable SYSTEM_TRUSTED_KEYS
