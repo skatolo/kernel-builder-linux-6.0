@@ -19,7 +19,6 @@ jobs:
       matrix:
         label: [a102]
 
-
     steps:
 # vmmeter start
       - uses: alexellis/setup-arkade@master
