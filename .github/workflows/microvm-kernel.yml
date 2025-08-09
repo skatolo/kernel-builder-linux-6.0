@@ -14,10 +14,10 @@ on:
 jobs:
   build:
     name: microvm-kernel-${{ matrix.label }}
-    runs-on: [actuated-arm64-20cpu-24gb, "${{ matrix.label }}" ]
+    runs-on: [actuated-arm64-8cpu-15gb, "${{ matrix.label }}" ]
     strategy:
       matrix:
-        label: [ultra]
+        label: [m1]
 
 
     steps:
