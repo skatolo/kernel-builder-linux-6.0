@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir `pwd`/src
           sudo chown -R $(whoami) `pwd`/src
-          sudo mount -o size=1G -t tmpfs none `pwd`/src
+          sudo mount -o size=16G -t tmpfs none `pwd`/src
           sudo chown -R $(whoami) `pwd`/src
           df -h
       - name: free RAM
