@@ -15,10 +15,10 @@ on:
 jobs:
   build:
     name: microvm-kernel-${{ matrix.label }}
-    runs-on: [actuated-32cpu-32gb, "${{ matrix.label }}" ]
+    runs-on: [actuated-4cpu-32gb, "${{ matrix.label }}" ]
     strategy:
       matrix:
-        label: [a102]
+        label: [n100]
 
     steps:
 # vmmeter start
@@ -77,3 +77,10 @@ jobs:
           cd src/linux.git
           time make vmlinux -j$(nproc)
           du -h ./vmlinux
+
+      - name: Check RAM disk usage and clean it up
+        if: always()
+        run: |
+          df -h `pwd`/src
+          sudo umount `pwd`/src || true
+          rm -rf `pwd`/src
