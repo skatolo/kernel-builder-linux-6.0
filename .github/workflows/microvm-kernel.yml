@@ -26,6 +26,13 @@ jobs:
       - uses: self-actuated/vmmeter-action@master
   # vmmeter end
 
+      - name: Setup RAM disk for Linux
+        run: |
+          mkdir `pwd`/src
+          sudo chown -R $(whoami) `pwd`/src
+          sudo mount -o size=1G -t tmpfs none `pwd`/src
+          sudo chown -R $(whoami) `pwd`/src
+          df -h
       - name: free RAM
         run: free -h
       - name: List CPUs
@@ -47,10 +54,10 @@ jobs:
             bc
       - name: clone linux
         run: |
-          time git clone https://github.com/torvalds/linux.git linux.git --depth=1 --branch v6.13
+          time git clone https://github.com/torvalds/linux.git src/linux.git --depth=1 --branch v6.13
       - name: make config
         run: |
-          cd linux.git 
+          cd src/linux.git 
           # Generate a default config
           #make defconfig
 
@@ -67,6 +74,6 @@ jobs:
 
       - name: Make vmlinux
         run: |
-          cd linux.git
+          cd src/linux.git
           time make vmlinux -j$(nproc)
           du -h ./vmlinux
