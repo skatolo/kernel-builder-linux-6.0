@@ -29,10 +29,10 @@ jobs:
       - name: Setup RAM disk for Linux
         run: |
           mkdir `pwd`/src
-          sudo chown -R $(whoami) `pwd`/src
-          sudo mount -o size=16G -t tmpfs none `pwd`/src
-          sudo chown -R $(whoami) `pwd`/src
-          df -h
+          # sudo chown -R $(whoami) `pwd`/src
+          # sudo mount -o size=16G -t tmpfs none `pwd`/src
+          # sudo chown -R $(whoami) `pwd`/src
+          # df -h
       - name: free RAM
         run: free -h
       - name: List CPUs
