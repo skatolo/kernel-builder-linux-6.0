@@ -15,7 +15,7 @@ on:
 jobs:
   build:
     name: microvm-kernel-${{ matrix.label }}
-    runs-on: [actuated-8cpu-32gb, "${{ matrix.label }}" ]
+    runs-on: [actuated-8cpu-30gb, "${{ matrix.label }}" ]
     strategy:
       matrix:
         label: [zfs, devmapper]
